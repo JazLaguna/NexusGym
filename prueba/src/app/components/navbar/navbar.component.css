@@ -1,0 +1,28 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.logo {
+  height: 60px;
+  margin-left: 16px;
+}
+
+.sidenav-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+mat-toolbar {
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+

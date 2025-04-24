@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Fondo exclusivo del form login */
+.login-background {
+    height: 100vh;
+    background: linear-gradient(to right, #eab6ac, #948c90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
