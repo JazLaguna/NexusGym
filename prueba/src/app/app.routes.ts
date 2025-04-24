@@ -1,17 +1,14 @@
-
-// import { Routes } from '@angular/router';
-// import { LoginComponent } from './components/login/login.component';
-// import { authGuard } from './guards/auth.guard';
-// import { AppComponent } from './app.component';
-
-// export const routes: Routes = [
-//   { path: 'dashboard', component: AppComponent, canActivate: [authGuard] },
-//   { path: 'login', component: LoginComponent },
-//   { path: '', redirectTo: 'login', pathMatch: 'full' }
-// ];
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ClasesComponent } from './components/clases/clases.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
 
 export const routes: Routes = [
-  { path: '', component: AppComponent }
+  {path: 'nosotros',component: NosotrosComponent},
+  {path: 'clases',component:ClasesComponent},
+  {path: 'contacto',component: ContactoComponent},
+  {path:'galeria',component:GaleriaComponent},
+  { path: 'inicio', component: AppComponent }
 ];

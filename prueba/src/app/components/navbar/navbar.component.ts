@@ -3,11 +3,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../shared/auth.service';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';  // Importa MatSidenavModule
 import { MatListModule } from '@angular/material/list';  // Importa MatListModule
+import { NosotrosComponent } from '../nosotros/nosotros.component';
+import { ClasesComponent } from '../clases/clases.component';
+import { ContactoComponent } from '../contacto/contacto.component';
+import { GaleriaComponent } from '../galeria/galeria.component';
 
 @Component({
   selector: 'app-navbar',
@@ -18,8 +22,13 @@ import { MatListModule } from '@angular/material/list';  // Importa MatListModul
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    MatSidenavModule,  // Asegúrate de incluir esto
-    MatListModule,  // Y esto
+    MatSidenavModule,  
+    MatListModule,
+    RouterModule,
+    NosotrosComponent,
+    ClasesComponent,
+    ContactoComponent,
+    GaleriaComponent 
   ],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']

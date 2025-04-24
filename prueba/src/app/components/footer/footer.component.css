@@ -9,19 +9,32 @@
     padding: 0 20px;
     z-index: 100;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    background-color: black !important;
 }
 
 .footer-text {
     font-size: 14px;
-    color: #0e0c0c;
+    color: #faf3f3;
 }
 
 .footer-icons a {
-    color: #1f1c1c;
+    color: #fffcfc;
     margin-left: 15px;
     text-decoration: none;
 }
 
 .spacer {
     flex: 1 1 auto;
-}
+} 
+/* .footer-dark {
+    background-color: #000000 !important;
+  }
+  
+  .footer-text-light {
+    color: #ffffff;
+  }
+  
+  .footer-icon-light a mat-icon {
+    color: #ffffff;
+  } */
+  
