@@ -12,6 +12,7 @@ import { NosotrosComponent } from '../nosotros/nosotros.component';
 import { ClasesComponent } from '../clases/clases.component';
 import { ContactoComponent } from '../contacto/contacto.component';
 import { GaleriaComponent } from '../galeria/galeria.component';
+import 'animate.css';
 
 @Component({
   selector: 'app-navbar',
@@ -36,6 +37,14 @@ import { GaleriaComponent } from '../galeria/galeria.component';
 export class NavbarComponent {
   @Input() user: any;
   @ViewChild('sidenav') sidenav!: MatSidenav;
+
+  animateLogo = false;
+  triggerAnimation() {
+    this.animateLogo = false;
+    setTimeout(() => {
+      this.animateLogo = true;
+    }, 10); // pequeño delay para reiniciar la animación
+  }
 
   constructor(private authService: AuthService, private router: Router) {}
 

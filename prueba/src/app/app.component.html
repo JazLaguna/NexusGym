@@ -1,6 +1,7 @@
 <div [ngClass]="{ 'login-background': !isLoggedIn }">
     @if (isLoggedIn) {
     <app-navbar [user]="currentUser"></app-navbar>
+    <router-outlet></router-outlet>
     <app-footer></app-footer>
     } @else {
     <app-login></app-login>

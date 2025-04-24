@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MatButtonModule,
     NavbarComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -28,6 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
 export class AppComponent {
   private authService = inject(AuthService);
   private fb = inject(FormBuilder);
+  private router = inject(Router);
 
   loginForm = this.fb.group({
     username: ['', Validators.required],
@@ -47,7 +50,10 @@ export class AppComponent {
   login() {
     const { username, password } = this.loginForm.value;
     const success = this.authService.login(username!, password!);
-    if (!success) {
+    if (success) {
+      // Redirigir al componente de inicio después del login exitoso
+      this.router.navigate(['/inicio']);
+    } else {
       this.errorMessage = 'Credenciales incorrectas.';
     }
   }

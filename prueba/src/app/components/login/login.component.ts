@@ -39,7 +39,8 @@ export class LoginComponent {
       const success = this.authService.login(username!, password!);
       if (success) {
         // Redirige a la página principal o dashboard
-        this.router.navigate(['/dashboard']);
+        //this.router.navigate(['/dashboard']);
+        this.router.navigate(['/inicio']);
       } else {
         // Muestra mensaje de error
         this.errorMessage = 'Credenciales incorrectas.';
