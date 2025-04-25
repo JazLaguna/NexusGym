@@ -1,1 +1,72 @@
-<p>nosotros works!</p>
+<div class="contenedorPrincipal">
+    <div class="contenedor">
+
+        <h2>Acerca de nosotros</h2>
+        <p class="texto">Somos un gimnasio exclusivo para mujeres, diseñado para ofrecer una experiencia única en cada entrenamiento. Nuestro principal objetivo es que te sientas cómoda, segura y completamente libre en un espacio pensado especialmente para ti.
+            Sabemos que muchas veces el ambiente de los gimnasios tradicionales puede generar incomodidades, por eso aquí eliminamos esas barreras para que te concentres únicamente en ti y en tu bienestar. En nuestro gimnasio no hay juicios ni miradas incómodas, solo un entorno de respeto, apoyo y motivación.
+            Cada rincón ha sido creado con detalle para que disfrutes al máximo tu rutina, con instalaciones seguras, modernas y un equipo comprometido con ayudarte a alcanzar tus metas. Aquí, lo más importante eres tú y tu bienestar.</p>
+    </div>
+
+
+    <div class="formularioContenedor">
+        <div>
+            <form #formOpinion="ngForm" (ngSubmit)="enviar()">
+                <mat-card appearance="outlined">
+                  <mat-card-header>
+                    <mat-card-title>Tu opinión es importante para nosotros</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content style="width: 400px;">
+                    <p>
+                        <mat-form-field class="full-width">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput name="nombre" [(ngModel)]="nombre" required>
+                          </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field class="full-width">
+                            <mat-label>Apellido</mat-label>
+                            <input matInput name="apellido" [(ngModel)]="apellido" required>
+                          </mat-form-field>
+                    </p>
+
+                    <p>
+                        <mat-form-field class="full-width">
+                            <mat-label>Ultima visita</mat-label>
+                            <input matInput name="fecha" [matDatepicker]="picker" [(ngModel)]="fecha"  required>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                    </p>
+                    <p>
+                        <mat-form-field class="full-width">
+                            <mat-label >Opinión</mat-label>
+                            <textarea matInput name="opinion" [(ngModel)]="opinion" required></textarea>
+                          </mat-form-field>
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-raised-button color="primary" type="submit">Enviar</button>
+                  </mat-card-actions>
+                </mat-card>
+              </form>
+              
+        </div>
+        <!--**********************************************************************-->
+        <div>
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                  <mat-card-title>Opiniones</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="opinionContainer">
+                        @for (opinion of opiniones; track $index) {
+                            <app-opinion [opinion]="opinion"></app-opinion>
+                        }
+                    </div>
+                </mat-card-content>
+                
+            </mat-card>
+        </div>
+          
+    </div>
+</div>

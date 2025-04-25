@@ -1,0 +1,23 @@
+.contenedorPrincipal{
+    display: flex;
+    padding: 24px;
+
+    flex-direction: column;
+    gap: 16px;
+    overflow: auto;
+    min-height: 100vh;
+}
+.formularioContenedor{
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+}
+
+.opinionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
