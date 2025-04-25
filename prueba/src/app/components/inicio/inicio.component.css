@@ -1,0 +1,54 @@
+.custom-carousel {
+    max-width: 95vw;
+    margin: 0 auto;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    padding: 10px;
+  }
+  
+  .carousel-slide img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease;
+  }
+  
+  .carousel-slide img:hover {
+    transform: scale(1.02);
+  }
+  
+  .mat-tab-header {
+    display: none;
+  }
+  .slogan-header {
+    background-color: #252424; /* fondo oscuro elegante */
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .slogan-text {
+    font-size: 2.5rem;
+    color: #eaafa4; /* rosa suave como acento */
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  .slogan-text strong {
+    color: #ffffff; /* blanco para resaltar "uniendo fuerzas" */
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
