@@ -34,9 +34,16 @@ export class AppComponent {
 
   loginForm = this.fb.group({
     username: ['', Validators.required],
-    password: ['', Validators.required]
+    password: ['', Validators.required],
+    edad: [null, Validators.required],  // Edad como número
+    nivel: this.fb.group({
+      basico: [false],
+      intermedio: [false],
+      avanzado: [false]
+    })
+    
   });
-
+  
   errorMessage = '';
 
   get isLoggedIn() {
@@ -48,13 +55,20 @@ export class AppComponent {
   }
 
   login() {
-    const { username, password } = this.loginForm.value;
-    const success = this.authService.login(username!, password!);
+    const { username, password, edad, nivel } = this.loginForm.value;
+  
+    let nivelSeleccionado = '';
+    if (nivel?.basico) nivelSeleccionado = 'basico';
+    else if (nivel?.intermedio) nivelSeleccionado = 'intermedio';
+    else if (nivel?.avanzado) nivelSeleccionado = 'avanzado';
+  
+    const success = this.authService.login(username!, password!, edad!, nivelSeleccionado);
     if (success) {
-      // Redirigir al componente de inicio después del login exitoso
       this.router.navigate(['/inicio']);
     } else {
       this.errorMessage = 'Credenciales incorrectas.';
     }
   }
+  
+  
 }

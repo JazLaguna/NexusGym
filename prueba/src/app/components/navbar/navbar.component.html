@@ -14,7 +14,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-toolbar color="primary">
+  <mat-toolbar class="custom-toolbar">
     <button mat-icon-button (click)="toggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -29,8 +29,7 @@
   
 
     <span class="spacer"></span>
-
-    <ng-container *ngIf="user">
+    @if(user) {
       <button mat-button [matMenuTriggerFor]="userMenu">
         {{ user.name }} <mat-icon>arrow_drop_down</mat-icon>
       </button>
@@ -46,6 +45,6 @@
           <span>Cerrar sesión</span>
         </button>
       </mat-menu>
-    </ng-container>
+    } 
   </mat-toolbar>
 </mat-sidenav-container>

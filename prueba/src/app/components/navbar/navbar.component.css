@@ -4,6 +4,7 @@
 
 .sidenav {
   width: 250px;
+  background-color: #fbd5e5 !important;
 }
 
 .spacer {
@@ -25,4 +26,13 @@ mat-toolbar {
   overflow: hidden;
   flex-wrap: wrap;
 }
+
+.custom-toolbar {
+  background-color: #fbd5e5 !important;
+}
+
+
+
+
+
 

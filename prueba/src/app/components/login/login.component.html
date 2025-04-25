@@ -1,30 +1,58 @@
 <div class="login-wrapper">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Nombre de usuario</mat-label>
-        <input matInput type="text" formControlName="username" required />
-        @if (loginForm.get('username')?.hasError('required')) {
-          <mat-error>El nombre de usuario es requerido.</mat-error>
-        }
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>Contraseña</mat-label>
-        <input matInput type="password" formControlName="password" required />
-        @if (loginForm.get('password')?.hasError('required')) {
-          <mat-error>La contraseña es requerida.</mat-error>
-        }
-      </mat-form-field>
-  
-      @if (errorMessage) {
-        <div class="error-message">{{ errorMessage }}</div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre de usuario</mat-label>
+      <input matInput type="text" formControlName="username" required />
+      @if (loginForm.get('username')?.hasError('required')) {
+      <mat-error>El nombre de usuario es requerido.</mat-error>
       }
-  
-      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
-        Iniciar sesión
-      </button>
-  
-    </form>
-  </div>
-  
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="password" required />
+      @if (loginForm.get('password')?.hasError('required')) {
+      <mat-error>La contraseña es requerida.</mat-error>
+      }
+    </mat-form-field>
+
+
+    <!-- Edad -->
+    <!-- Edad -->
+    <mat-form-field appearance="fill">
+      <mat-label>Edad</mat-label>
+      <mat-select formControlName="edad">
+        <mat-option [value]="null">-- Sin seleccionar --</mat-option>
+        @for (edad of edades; track edad) {
+        <mat-option [value]="edad">{{ edad }}</mat-option>
+        }
+      </mat-select>
+
+      @if (loginForm.get('edad')?.hasError('required') && loginForm.get('edad')?.touched) {
+      <mat-error>La edad es requerida.</mat-error>
+      }
+    </mat-form-field>
+
+
+
+    <!-- Checkboxes de nivel -->
+    <div formGroupName="nivel" class="niveles">
+      <p style="margin: 10px 0; ">Nivel de entrenamiento:</p>
+      <mat-checkbox formControlName="basico" (change)="onNivelChange('basico')">Básico</mat-checkbox>
+      <mat-checkbox formControlName="intermedio" (change)="onNivelChange('intermedio')">Intermedio</mat-checkbox>
+      <mat-checkbox formControlName="avanzado" (change)="onNivelChange('avanzado')">Avanzado</mat-checkbox>
+    </div>
+
+
+
+    @if (errorMessage) {
+    <div class="error-message">{{ errorMessage }}</div>
+    }
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
+      Iniciar sesión
+    </button>
+
+  </form>
+</div>

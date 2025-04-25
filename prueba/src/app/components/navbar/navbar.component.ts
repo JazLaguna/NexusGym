@@ -6,8 +6,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../shared/auth.service';
-import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';  // Importa MatSidenavModule
-import { MatListModule } from '@angular/material/list';  // Importa MatListModule
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';  
+import { MatListModule } from '@angular/material/list';  
 import { NosotrosComponent } from '../nosotros/nosotros.component';
 import { ClasesComponent } from '../clases/clases.component';
 import { ContactoComponent } from '../contacto/contacto.component';
