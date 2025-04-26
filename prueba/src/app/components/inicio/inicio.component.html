@@ -1,9 +1,34 @@
-<header class="slogan-header">
-    <h1 class="slogan-text">
-      <span>Exclusivamente para ellas,</span><br>
-      <strong>uniendo fuerzas</strong>
-    </h1>
-  </header>
+<header class="slogan-header text-center mb-5">
+  <h1 class="slogan-text">
+    <span>Exclusivamente para ellas,</span><br>
+    <strong>uniendo fuerzas</strong>
+  </h1>
+</header>
+
+<!-- BÚSQUEDA -->
+<div class="container mb-4">
+  <app-busqueda (buscar)="onBuscar($event)"></app-busqueda>
+</div>
+
+<!-- GRID DE CARDS -->
+<div class="container pb-5 mt-4"> 
+  <div class="entrenadoras-grid">
+    @for (entrenadora of entrenadorasFiltradas(); track $index) {
+      <mat-card class="shadow-lg rounded-4 card-entrenadora">
+        <img mat-card-image [src]="entrenadora.foto" alt="Foto de entrenadora" class="rounded-top-4 object-fit-cover" style="height: 250px;">
+        <mat-card-content class="text-center mt-3">
+          <h5 class="fw-bold">{{ entrenadora.nombre }}</h5>
+          <p class="mb-1">{{ entrenadora.email }}</p>
+          <p class="mb-0">{{ entrenadora.pais }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div>
+
+
+
+
   
 
   <!-- carrusel -->

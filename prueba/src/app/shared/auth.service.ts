@@ -8,7 +8,7 @@ export class AuthService {
   private admins = [
     { username: 'admin1', password: '1234', name: 'Kimbely Guadalupe Marmolejo García',edad: 21, nivel:'intermedio'},
     { username: 'admin2', password: 'abcd', name: 'Alicia Jazmín Díaz Laguna',edad:21,nivel:'basico'},
-    { username: 'admin3', password: 'pass2025', name: 'Georgina Salazar Partida',edad:45,nivel: 'avanzado'}
+    { username: 'admin3', password: '2025', name: 'Georgina Salazar Partida',edad:45,nivel: 'avanzado'}
   ];
 
   login(username: string, password: string, edad: number, nivel: string): boolean {

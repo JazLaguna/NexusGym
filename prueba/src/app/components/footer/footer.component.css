@@ -1,16 +1,14 @@
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    z-index: 100;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
-    background-color: black !important;
+  position: static; /* <-- Ya no flotante */
+  bottom: auto;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: black !important;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 40px; /* espacio arriba */
 }
+
 
 .footer-text {
     font-size: 14px;
