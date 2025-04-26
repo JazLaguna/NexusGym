@@ -12,4 +12,5 @@ export const authGuard: CanActivateFn = (route, state) => {
     router.navigate(['/login']); // redirige a login si no está autenticado
     return false;
   }
+  /*Protege las rutas solo deja entrar al inicio si el usuario esta logeado */
 };

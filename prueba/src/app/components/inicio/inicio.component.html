@@ -24,6 +24,12 @@
       </mat-card>
     }
   </div>
+  <!--Mensaje si no hay resultados-->
+  @if (entrenadorasFiltradas().length === 0) {
+    <div class="text-center mt-5 animate__animated animate__fadeIn">
+      <p style="color: #f7076b; font-size: 1.3rem; text-align: center;">No se encontró ninguna entrenadora con ese nombre.</p>
+    </div>
+  }
 </div>
 
 
