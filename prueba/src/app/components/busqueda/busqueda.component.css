@@ -1,24 +1,21 @@
+.busqueda-container {
+    position: relative;
+    width: 100%;
+    max-width: 270px;
+    margin: 0 auto;
+}
+
 .buscador-input {
     width: 100%;
-    max-width: 400px;
-    /* o el ancho que quieras */
     background-color: #fbd5e5;
-    /* Fondo rosa suave */
     color: #252424;
-    /* Texto oscuro */
     border: none;
     border-radius: 30px;
-    padding: 12px 20px;
+    padding: 12px 45px 12px 20px;
     font-size: 1.2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     margin-top: 10px;
-}
-
-.general {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .buscador-input::placeholder {
@@ -30,5 +27,22 @@
     outline: none;
     box-shadow: 0 0 0 4px rgba(234, 175, 164, 0.5);
     background-color: #f5c6bd;
-    /* un rosita un poquito más claro al enfocar */
+}
+
+.boton-lupa {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    transform: translateY(-20%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #3d3d3d;
+    font-size: 1.2rem;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.boton-lupa:hover {
+    color: #f7076b;
 }
