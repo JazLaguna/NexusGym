@@ -37,7 +37,7 @@
   
   .slogan-text {
     font-size: 2.5rem;
-    color: #eaafa4; /* rosa suave como acento */
+    color: #fbd5e5; /* rosa suave como acento */
     font-weight: 300;
     line-height: 1.4;
     letter-spacing: 1px;
@@ -62,7 +62,7 @@
   
   /* Cards visuales */
   .card-entrenadora {
-    background-color: #eaafa4; /* Rosa pastel bonito */
+    background-color: #fbd5e5; /* Rosa pastel bonito */
     color: #252424; /* Texto en color oscuro para que contraste */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 16px; /* Un poco más redondeadas */
