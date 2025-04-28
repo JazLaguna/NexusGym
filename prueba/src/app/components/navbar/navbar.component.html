@@ -37,7 +37,7 @@
       <!--Submenu para las configuraciones del usuario en el LocalStorage-->
       <!--tambien para cerrar la sesion y volver a la pantalla principal del login-->
       <mat-menu #userMenu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item [routerLink]="['/configuracion']">
           <mat-icon>settings</mat-icon>
           <span>Configuración</span>
         </button>

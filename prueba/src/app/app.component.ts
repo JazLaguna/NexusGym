@@ -35,7 +35,7 @@ export class AppComponent {
   loginForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
-    edad: [null, Validators.required],  // Edad como número
+    edad: [null, Validators.required],  
     nivel: this.fb.group({
       basico: [false],
       intermedio: [false],

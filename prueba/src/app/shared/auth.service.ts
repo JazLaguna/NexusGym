@@ -37,4 +37,46 @@ export class AuthService {
   isLoggedIn(): boolean {
     return !!localStorage.getItem('user');
   }
+
+  updateUser(updatedUser: any) {
+    const index = this.admins.findIndex(admin => admin.username === updatedUser.username);
+    
+    if (index !== -1) {
+      this.admins[index] = { ...updatedUser }; // Actualizas el admin también
+    }
+    
+    localStorage.setItem('user', JSON.stringify(updatedUser)); // Actualizas también el localStorage
+  }
+  //----------
+  deleteAdmin(username: string) {
+    const index = this.admins.findIndex(admin => admin.username === username);
+    if (index !== -1) {
+      const deleted = this.admins[index];
+      // MARCAMOS todos sus campos como "eliminado"
+      this.admins[index] = {
+        username: deleted.username,
+        password: '', // vaciamos password
+        name: 'No existen datos para mostrar',
+        edad: 0,
+        nivel: 'No existen datos para mostrar'
+      };
+      localStorage.setItem('adminEliminado', deleted.username); // Guardamos su username eliminado
+      const currentUser = JSON.parse(localStorage.getItem('user')!);
+      if (currentUser?.username === username) {
+        this.logout();
+      }
+      return deleted;
+    }
+    return null;
+  }
+  
+  
+  getAdmins() {
+    return [...this.admins];
+  }
+  
+  // Para leer el admin eliminado guardado
+  getAdminEliminado() {
+    return localStorage.getItem('adminEliminado');
+  }
 }
