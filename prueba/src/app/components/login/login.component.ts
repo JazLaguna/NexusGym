@@ -38,6 +38,7 @@ export class LoginComponent {
     username: ['', Validators.required],
     password: ['', Validators.required],
     edad: [null, Validators.required],
+    fecha: ['', Validators.required], 
     nivel: this.fb.group({
       basico: [false],
       intermedio: [false],
@@ -81,8 +82,13 @@ export class LoginComponent {
   
       const success = this.authService.login(username!, password!, edad!, nivelSeleccionado);
       if (success) {
-        this.router.navigate(['/inicio']);
-      } else {
+        const fecha = this.loginForm.get('fecha')?.value;
+        if (fecha) {
+          localStorage.setItem('fechaSesion', fecha); // ✅ Guardamos la fecha en localStorage
+          const fechaParam = fecha;
+          this.router.navigate(['/inicio', fechaParam]);
+        }
+      }else {
         Swal.fire({
           icon: 'error',
           title: 'Credenciales incorrectas',

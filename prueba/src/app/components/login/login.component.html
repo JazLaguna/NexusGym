@@ -43,7 +43,14 @@
       <mat-checkbox formControlName="avanzado" (change)="onNivelChange('avanzado')">Avanzado</mat-checkbox>
     </div>
 
-
+    <!--Fecha-->
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de ingreso</mat-label>
+      <input matInput type="date" formControlName="fecha" required />
+      @if (loginForm.get('fecha')?.hasError('required')) {
+        <mat-error>La fecha es requerida.</mat-error>
+      }
+    </mat-form-field>
 
     @if (errorMessage) {
     <div class="error-message">{{ errorMessage }}</div>

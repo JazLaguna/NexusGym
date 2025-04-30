@@ -9,7 +9,7 @@ html, body {
 
 main {
   flex: 1;
-  padding-bottom: 100px; 
+  padding-bottom: 240px; 
 }
 
 
@@ -24,6 +24,7 @@ body, html {
  
   font-family: 'Segoe UI', sans-serif;
 } 
+
 
 /*LOGIN*/
 .login-background {
