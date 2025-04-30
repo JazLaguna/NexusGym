@@ -1,1 +1,17 @@
-<p>galeria works!</p>
+<div style="display: grid; place-items: center;">
+    <div [ngStyle]="{ 'font-size': '40px', 'color': 'black', 'magin-top': '20px' }">
+      ¡Conoce nuestras instalaciones!
+    </div>
+</div>
+
+<div>
+    <div class="masonry">
+        @for (tile of img; track tile) {
+          <div class="masonry-item">
+            <img [src]="tile.img" alt="Imagen" />
+          </div>
+        }
+      </div>
+</div>
+
+
