@@ -19,33 +19,57 @@
                     <p>
                         <mat-form-field class="full-width">
                             <mat-label>Nombre</mat-label>
-                            <input matInput name="nombre" [(ngModel)]="nombre" required>
+                            <!-- valicacion del nombre!-->
+                            <input matInput name="nombre" [(ngModel)]="nombre" #nombreCtrl="ngModel" required>
+                            @if (nombreCtrl.invalid && nombreCtrl.touched) {
+                              <mat-error>El nombre es requerido.</mat-error>
+                            }
                           </mat-form-field>
                     </p>
                     <p>
                         <mat-form-field class="full-width">
                             <mat-label>Apellido</mat-label>
-                            <input matInput name="apellido" [(ngModel)]="apellido" required>
+                            <input matInput name="apellido" [(ngModel)]="apellido" #apellidoCtrl="ngModel" required>
+                            @if (apellidoCtrl.invalid && apellidoCtrl.touched) {
+                              <mat-error>El apellido es requerido.</mat-error>
+                            }
                           </mat-form-field>
                     </p>
 
-                    <p>
+                    
+                    
                         <mat-form-field class="full-width">
-                            <mat-label>Ultima visita</mat-label>
-                            <input matInput name="fecha" [matDatepicker]="picker" [(ngModel)]="fecha"  required>
+                          <mat-label>Opinión</mat-label>
+                          <textarea matInput name="opinion" [(ngModel)]="opinion" #opinionCtrl="ngModel" required></textarea>
+                          
+                          <!-- Validación de la opinión -->
+                          @if (opinionCtrl.invalid && opinionCtrl.touched) {
+                            <mat-error>La opinión es requerida.</mat-error>
+                          }
+                        </mat-form-field>
+                        <p>
+                          <mat-form-field class="full-width">
+                            <mat-label>Última visita</mat-label>
+                            <input matInput name="fecha" [matDatepicker]="picker" [(ngModel)]="fecha" #fechaCtrl="ngModel" required [max]="hoy">
+                          
+                            <!-- Validación de la fecha -->
                             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                          
+                            @if (fechaCtrl.errors?.['matDatepickerMax'] && fechaCtrl.touched) {
+                              <mat-error>No puedes elegir una fecha futura.</mat-error>
+                            }
+                          
                             <mat-datepicker #picker></mat-datepicker>
                           </mat-form-field>
-                    </p>
-                    <p>
-                        <mat-form-field class="full-width">
-                            <mat-label >Opinión</mat-label>
-                            <textarea matInput name="opinion" [(ngModel)]="opinion" required></textarea>
-                          </mat-form-field>
-                    </p>
+                        </p>
+                        
                   </mat-card-content>
                   <mat-card-actions>
-                    <button mat-raised-button color="primary" type="submit">Enviar</button>
+                    
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!formOpinion.valid">
+                      Enviar
+                    </button>
+                    
                   </mat-card-actions>
                 </mat-card>
               </form>
