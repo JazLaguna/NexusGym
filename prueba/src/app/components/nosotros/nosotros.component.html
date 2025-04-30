@@ -55,7 +55,11 @@
                             <!-- Validación de la fecha -->
                             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                           
-                            @if (fechaCtrl.errors?.['matDatepickerMax'] && fechaCtrl.touched) {
+                            @if (fechaCtrl.errors?.['required'] && fechaCtrl.touched) {
+                              <mat-error>La fecha es requerida.</mat-error>
+                            }
+                            
+                            @else if (fechaCtrl.errors?.['matDatepickerMax'] && fechaCtrl.touched) {
                               <mat-error>No puedes elegir una fecha futura.</mat-error>
                             }
                           
