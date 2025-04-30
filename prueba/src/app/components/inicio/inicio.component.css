@@ -36,15 +36,12 @@
   margin-top: 2rem;
 }
 
-/* Cards visuales */
+/* Cards entrenadoras*/
 .card-entrenadora {
   background-color: #fbd5e5;
-  /* Rosa pastel bonito */
   color: #252424;
-  /* Texto en color oscuro para que contraste */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 16px;
-  /* Un poco más redondeadas */
+  border-radius: 10px;
 }
 
 

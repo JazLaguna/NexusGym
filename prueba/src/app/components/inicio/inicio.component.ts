@@ -8,7 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-inicio',
-  standalone:true,
+  standalone: true,
   imports: [
     CommonModule,
     MatTabsModule,
@@ -31,7 +31,7 @@ export class InicioComponent {
   entrenadoras = signal<any[]>([]);
   entrenadorasFiltradas = signal<any[]>([]);
 
-  constructor(private entrenadorasService: EntrenadorasService){}
+  constructor(private entrenadorasService: EntrenadorasService) { }
 
   ngOnInit() {
     // Cambia de slide cada 3 segundos
@@ -43,20 +43,29 @@ export class InicioComponent {
       this.entrenadoras.update(() => res);
       this.entrenadorasFiltradas.update(() => res);
     });
-    
+
   }
 
   ngOnDestroy() {
     this.intervalSub.unsubscribe();
   }
+  /* por nombre de entrenadora
+    onBuscar(termino: string) {
+      this.entrenadorasFiltradas.update(() => 
+        this.entrenadoras().filter((entrenadora: any) => 
+          entrenadora.nombre.toLowerCase().includes(termino)
+        )
+      );
+    }*/
 
   onBuscar(termino: string) {
-    this.entrenadorasFiltradas.update(() => 
-      this.entrenadoras().filter((entrenadora: any) => 
-        entrenadora.nombre.toLowerCase().includes(termino)
+    this.entrenadorasFiltradas.update(() =>
+      this.entrenadoras().filter((entrenadora: any) =>
+        entrenadora.discipline_name.toLowerCase().includes(termino)
       )
     );
   }
-  
-  
+
+
+
 }

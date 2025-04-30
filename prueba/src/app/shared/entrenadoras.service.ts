@@ -28,9 +28,10 @@ export class EntrenadorasService {
           return datos.map((entrenadora, index) => ({
             nombre: entrenadora.nombre,
             email: entrenadora.email,
-            pais: entrenadora.nacionalidad,
+            discipline_name: entrenadora.discipline_name,
             foto: `assets/img/entrenadora${index + 1}.jpg`
           }));
+          
         }),
         shareReplay(1)
       );
