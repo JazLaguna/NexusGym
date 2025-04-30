@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Router, RouterModule } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,8 @@ import { Router, RouterModule } from '@angular/router';
     NavbarComponent,
     LoginComponent,
     FooterComponent,
-    RouterModule
+    RouterModule,
+    HeaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
