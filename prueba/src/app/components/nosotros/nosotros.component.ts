@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { OpinionComponent } from '../../opinion/opinion.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nosotros',
@@ -23,6 +24,8 @@ export class NosotrosComponent {
   apellido: string = '';
   fecha: string = '';
   opiniones: any[] = [];
+  hoy: Date = new Date();
+
 
   enviar() {
     const nuevaOpinion = {
@@ -36,9 +39,22 @@ export class NosotrosComponent {
     this.opiniones.push(nuevaOpinion);
     localStorage.setItem('opiniones', JSON.stringify(this.opiniones));
 
-    alert('¡Gracias por tu opinión!');
+    /*alert('¡Gracias por tu opinión!');
+    this.nombre = '';
+    this.opinion = '';*/
+    Swal.fire({
+      title: '¡Gracias por tu opinión!',
+      html: `<p><strong>Nombre:</strong> ${this.nombre}</p>
+             <p><strong>Opinión:</strong> ${this.opinion}</p>`,
+      icon: 'success',
+      confirmButtonText: 'Cerrar'
+    });
+    
+    // Luego limpias los campos
     this.nombre = '';
     this.opinion = '';
+    this.apellido = '';
+    this.fecha = '';
   }
 
   ngOnInit() {

@@ -1,1 +1,38 @@
-<p>clases works!</p>
+<div style="display: grid; place-items: center;">
+    <div [ngStyle]="{ 'font-size': '20px', 'color': 'black' }">
+      Clases Disponibles
+    </div>
+</div>
+
+<div
+  style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px;">
+
+  @for (clase of clases; track clase.nombre) {
+    <div
+      [ngStyle]="{
+        'border': '1px solid #ccc',
+        'padding': '16px',
+        'border-radius': '12px',
+        'box-shadow': '0 2px 8px rgba(0,0,0,0.1)',
+        'background-color': '#fbd5e5'
+      }">
+      
+      <img
+        [src]="clase.imagen"
+        [alt]="clase.nombre"
+        [ngStyle]="{
+          'width': '100%',
+          'height': '180px',
+          'object-fit': 'cover',
+          'border-radius': '8px 8px 0 0',
+          'margin-bottom': '12px'
+        }">
+
+      <h3 [ngStyle]="{ 'font-size': '20px', 'margin': '0 0 10px' }">{{ clase.nombre }}</h3>
+      <p [ngStyle]="{ 'margin': '0 0 8px', 'color': '#333' }"><strong>Descripción:</strong> {{ clase.descripcion }}</p>
+      <p [ngStyle]="{ 'margin': '0 0 8px' }"><strong>Horario:</strong> {{ clase.horario }}</p>
+      <p [ngStyle]="{ 'margin': '0' }"><strong>Costo:</strong> {{ clase.costo }}</p>
+    </div>
+  }
+</div>
+  
