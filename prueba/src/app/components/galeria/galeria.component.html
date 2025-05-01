@@ -1,1 +1,25 @@
-<p>galeria works!</p>
+<div style="display: grid; place-items: center;">
+    <div [ngStyle]="{ 'font-size': '40px', 'color': 'black', 'magin-top': '20px' }">
+      ¡Conoce nuestras instalaciones!
+    </div>
+</div>
+
+<div>
+    <div class="masonry">
+        @for (tile of img; track tile) {
+          <div class="masonry-item">
+            <img [src]="tile.img" alt="Imagen" />
+          </div>
+        }
+      </div>
+</div>
+
+<div class="video-container" style="display: grid; place-items: center; margin-top: 30px;">
+  <!--proteccion para que no se pueda descargar el video y no se pueda abrir el menu contextual!-->
+  <video width="720" height="480" autoplay controls controlsList="nodownload" oncontextmenu="return false;">
+    <source [src]="videoUrl | safe" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+</div>
+
+
