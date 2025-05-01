@@ -20,9 +20,10 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class InicioComponent {
   imagenesCarrusel = [
-    'assets/img/img3.png',
+    'assets/img/principal.png',
+    /*'assets/img/img1.png',
     'assets/img/img2.png',
-    'assets/img/img4.png'
+    'assets/img/img4.png'*/
   ];
 
   activeIndex = 0;
