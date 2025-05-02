@@ -1,32 +1,33 @@
 .busqueda-container {
     position: relative;
     width: 100%;
-    max-width: 270px;
+    max-width: 290px;
     margin: 0 auto;
+    margin-top: 15px;
 }
 
 .buscador-input {
     width: 100%;
-    background-color: #fbd5e5;
-    color: #252424;
+    background-color: #070707;
+    color: #0a0a0a;
     border: none;
     border-radius: 30px;
     padding: 12px 45px 12px 20px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     margin-top: 10px;
 }
 
 .buscador-input::placeholder {
-    color: #6e6e6e;
+    color: #fffafa;
     opacity: 0.8;
 }
 
 .buscador-input:focus {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(234, 175, 164, 0.5);
-    background-color: #f5c6bd;
+    box-shadow: 0 0 0 4px #fd99c3c2;
+    background-color: #f7076b;
 }
 
 .boton-lupa {
@@ -37,7 +38,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #3d3d3d;
+    color: #f7f6f6;
     font-size: 1.2rem;
     padding: 0;
     transition: color 0.2s ease;

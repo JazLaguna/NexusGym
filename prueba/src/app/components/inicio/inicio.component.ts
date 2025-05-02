@@ -5,6 +5,7 @@ import { interval, Subscription } from 'rxjs';
 import { EntrenadorasService } from '../../shared/entrenadoras.service';
 import { BusquedaComponent } from '../busqueda/busqueda.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-inicio',
@@ -13,7 +14,8 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     MatTabsModule,
     BusquedaComponent,
-    MatCardModule
+    MatCardModule,
+    MatIconModule
   ],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
@@ -21,6 +23,14 @@ import { MatCardModule } from '@angular/material/card';
 export class InicioComponent {
   imagenesCarrusel = [
     'assets/img/principal.png',
+    'assets/img/zumba.jpg',
+    'assets/img/bodypump.jpg',
+    'assets/img/crossfit.jpg',
+    'assets/img/boxeo.jpg',
+    'assets/img/spinning.jpg',
+    'assets/img/yoga.jpg',
+    'assets/img/pilates.jpg',
+    'assets/img/kickboxing.jpg',
     /*'assets/img/img1.png',
     'assets/img/img2.png',
     'assets/img/img4.png'*/
@@ -67,6 +77,16 @@ export class InicioComponent {
     );
   }
 
+  /*Logica para las flechas del carrusel*/
+  siguienteSlide() {
+    this.activeIndex = (this.activeIndex + 1) % this.imagenesCarrusel.length;
+  }
+  
+  anteriorSlide() {
+    this.activeIndex =
+      (this.activeIndex - 1 + this.imagenesCarrusel.length) % this.imagenesCarrusel.length;
+  }
+  
 
 
 }

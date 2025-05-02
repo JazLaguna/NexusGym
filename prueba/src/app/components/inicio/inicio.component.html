@@ -1,19 +1,30 @@
   <!-- carrusel -->
-<mat-tab-group
-  [(selectedIndex)]="activeIndex"
-  animationDuration="500ms"
-  class="custom-carousel"
->
-  @for (imagen of imagenesCarrusel; track imagen) {
-    <mat-tab>
-      <ng-template matTabContent>
-        <div class="carousel-slide">
-          <img [src]="imagen" alt="Imagen del carrusel" />
-        </div>
-      </ng-template>
-    </mat-tab>
-  }
-</mat-tab-group>
+<!-- Carrusel -->
+<div class="carousel-wrapper">
+  <button class="arrow left" (click)="anteriorSlide()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <mat-tab-group
+    [(selectedIndex)]="activeIndex"
+    animationDuration="500ms"
+    class="custom-carousel"
+  >
+    @for (imagen of imagenesCarrusel; track imagen) {
+      <mat-tab>
+        <ng-template matTabContent>
+          <div class="carousel-slide">
+            <img [src]="imagen" alt="Imagen del carrusel" />
+          </div>
+        </ng-template>
+      </mat-tab>
+    }
+  </mat-tab-group>
+
+  <button class="arrow right" (click)="siguienteSlide()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>
 
 
 

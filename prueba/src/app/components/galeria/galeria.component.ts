@@ -17,12 +17,19 @@ export class GaleriaComponent {
     {  img: 'assets/img/galeria3.jpg' },
     {  img: 'assets/img/galeria4.jpg' },
     {  img: 'assets/img/galeria5.jpg' },
-    {  img: 'assets/img/galeria6.jpg' },
+    {  img: 'assets/img/img4.png' },
     {  img: 'assets/img/galeria7.jpg' },
     {  img: 'assets/img/galeria8.jpg' },
     {  img: 'assets/img/galeria9.jpg' },
     {  img: 'assets/img/galeria10.jpg' },
-    {  img: 'assets/img/galeria11.jpg' }
+    {  img: 'assets/img/galeria11.jpg' },
+    {  img: 'assets/img/img5.png' },
+    {  img: 'assets/img/img3.png' },
+    {  img: 'assets/img/img1.png' },
+    {  img: 'assets/img/img2.png' },
+    
+    
+    {  img: 'assets/img/galeria6.jpg' }
   ];
 
   videoUrl = 'https://archive.org/download/survivor-eye-of-the-tiger-1080p/SURVIVOR%20%28Eye%20Of%20The%20Tiger%29%20%28720p%29.mp4';
