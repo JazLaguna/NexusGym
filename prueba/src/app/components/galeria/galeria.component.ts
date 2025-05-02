@@ -27,8 +27,6 @@ export class GaleriaComponent {
     {  img: 'assets/img/img3.png' },
     {  img: 'assets/img/img1.png' },
     {  img: 'assets/img/img2.png' },
-    
-    
     {  img: 'assets/img/galeria6.jpg' }
   ];
 
