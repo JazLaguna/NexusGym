@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './opinion.component.css'
 })
 export class OpinionComponent {
-  @Input() opinion: { nombre: string, opinion: string , apellido: string, fecha: string}= { nombre: '', opinion: '', apellido: '', fecha: '' };
+  @Input() opinion: { nombre: string, opinion: string , apellido: string, edad:number, fecha: string}= { nombre: '', opinion: '', apellido: '', fecha: '', edad: 0 };
 
   fechaActual: string;
 

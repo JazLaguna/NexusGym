@@ -66,6 +66,28 @@
                             <mat-datepicker #picker></mat-datepicker>
                           </mat-form-field>
                         </p>
+
+                        <p>
+                          <mat-form-field class="full-width">
+                            <mat-label>Edad</mat-label>
+                            <mat-select
+                              name="edad"
+                              [(ngModel)]="edad"
+                              #edadCtrl="ngModel"
+                              required
+                            >
+                              <mat-option [value]="undefined" disabled>-- Selecciona tu edad --</mat-option>
+                              @for (e of edades; track e) {
+                                <mat-option [value]="e">{{ e }}</mat-option>
+                              }
+                            </mat-select>
+                            @if (edadCtrl.invalid && edadCtrl.touched) {
+                              <mat-error>La edad es requerida.</mat-error>
+                            }
+                          </mat-form-field>
+  
+                        </p>
+                        
                         
                   </mat-card-content>
                   <mat-card-actions>
