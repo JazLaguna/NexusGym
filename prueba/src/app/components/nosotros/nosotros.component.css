@@ -10,21 +10,12 @@
 }
 
 .formularioContenedor {
-    display: grid;
-    grid-template-columns: 1fr; /* Una columna por defecto */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
-    max-width: 600px; /* Tamaño fijo */
-   margin-left: 300px; /* Centrado horizontal */
-    align-items: start;
-    width: 100%;
 }
 
-/* Responsivo: en pantallas más grandes, usa 2 columnas */
-@media (min-width: 700px) {
-    .formularioContenedor {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
-    }
-}
 
 .opinionContainer {
     display: grid;
