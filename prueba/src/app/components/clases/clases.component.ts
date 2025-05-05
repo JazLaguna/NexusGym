@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Clases } from '../../clases';
+import { PromocionComponent } from '../promocion/promocion.component';
 
 @Component({
   selector: 'app-clases',
-  imports: [CommonModule],
+  imports: [CommonModule, PromocionComponent],
   templateUrl: './clases.component.html',
   styleUrl: './clases.component.css'
 })

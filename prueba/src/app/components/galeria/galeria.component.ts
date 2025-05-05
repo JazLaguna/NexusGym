@@ -3,10 +3,11 @@ import { Component, NgModule } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { Galeria } from '../../galeria';
 import { SafePipe } from '../../shared/url.pipe';
+import { VideoComponent } from "../video/video.component";
 
 @Component({
   selector: 'app-galeria',
-  imports: [CommonModule,MatGridListModule,SafePipe],
+  imports: [CommonModule, MatGridListModule, SafePipe, VideoComponent],
   templateUrl: './galeria.component.html',
   styleUrl: './galeria.component.css'
 })
@@ -30,7 +31,6 @@ export class GaleriaComponent {
     {  img: 'assets/img/galeria6.jpg' }
   ];
 
-  videoUrl = 'https://archive.org/download/survivor-eye-of-the-tiger-1080p/SURVIVOR%20%28Eye%20Of%20The%20Tiger%29%20%28720p%29.mp4';
 
 }
 

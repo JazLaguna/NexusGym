@@ -11,6 +11,7 @@ import { OpinionComponent } from '../../opinion/opinion.component';
 import Swal from 'sweetalert2';
 import { MatSelectModule } from '@angular/material/select';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { TituloNosotrosComponent } from '../titulo-nosotros/titulo-nosotros.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -29,7 +30,7 @@ export const MY_FORMATS = {
   standalone: true,
   providers: [provideNativeDateAdapter(), { provide: DateAdapter, useClass: MomentDateAdapter },
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }],
-  imports: [FormsModule, MatCardModule, MatInputModule,MatFormFieldModule,MatButtonModule,  MatDatepickerModule, OpinionComponent, MatOptionModule, MatSelectModule],
+  imports: [FormsModule, MatCardModule, MatInputModule,MatFormFieldModule,MatButtonModule,  MatDatepickerModule, OpinionComponent, MatOptionModule, MatSelectModule, TituloNosotrosComponent],
   templateUrl: './nosotros.component.html',
   styleUrl: './nosotros.component.css'
 })
