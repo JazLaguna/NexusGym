@@ -37,20 +37,35 @@
 
     <!-- Checkboxes de nivel -->
     <div formGroupName="nivel" class="niveles">
-      <p style="margin: 10px 0; ">Nivel de entrenamiento:</p>
+      <p style="margin: 10px 0;">Nivel de entrenamiento:</p>
       <mat-checkbox formControlName="basico" (change)="onNivelChange('basico')">Básico</mat-checkbox>
       <mat-checkbox formControlName="intermedio" (change)="onNivelChange('intermedio')">Intermedio</mat-checkbox>
       <mat-checkbox formControlName="avanzado" (change)="onNivelChange('avanzado')">Avanzado</mat-checkbox>
+    
+      @if (loginForm.get('nivel')?.hasError('nivelRequerido') && loginForm.get('nivel')?.touched) {
+        <mat-error>El nivel de entrenamiento es requerido.</mat-error>
+      }
     </div>
+    
 
     <!--Fecha-->
-    <mat-form-field appearance="fill">
+    <!-- <mat-form-field appearance="fill">
       <mat-label>Fecha de ingreso</mat-label>
       <input matInput type="date" formControlName="fecha" required />
       @if (loginForm.get('fecha')?.hasError('required')) {
         <mat-error>La fecha es requerida.</mat-error>
       }
+    </mat-form-field> -->
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha de ingreso</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fecha" required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      @if (loginForm.get('fecha')?.hasError('required')) {
+        <mat-error>La fecha es requerida.</mat-error>
+      }
     </mat-form-field>
+    
 
     @if (errorMessage) {
     <div class="error-message">{{ errorMessage }}</div>
