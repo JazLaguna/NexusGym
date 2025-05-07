@@ -37,8 +37,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2MB",
+                  "maximumError": "2.5MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -46,8 +46,12 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
-            },
+              "outputHashing": "all",
+              "baseHref": "/NexusGym/",
+              "allowedCommonJsDependencies": [
+              "zone.js",
+              "@fortawesome/fontawesome-free"]
+                        },
             "development": {
               "optimization": false,
               "extractLicenses": false,
