@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { AuthService } from '../../shared/auth.service';
 import { Router } from '@angular/router';
+import { ResumenComponent } from '../resumen/resumen.component';
 
 @Component({
   selector: 'app-configuracion',
@@ -16,7 +17,8 @@ import { Router } from '@angular/router';
     MatTableModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    ResumenComponent
   ],
   templateUrl: './configuracion.component.html',
   styleUrl: './configuracion.component.css'
@@ -68,6 +70,5 @@ export class ConfiguracionComponent {
 
     this.editandoUsername = null;
     this.admins = this.authService.getAdmins();
-  }
-
+  }  
 }
