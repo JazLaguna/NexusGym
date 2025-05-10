@@ -35,7 +35,7 @@ import 'animate.css';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  @Input() user: any;
+  @Input() user: any; //Recibe al usuario desde el componete padre
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   animateLogo = false;

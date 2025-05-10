@@ -33,7 +33,8 @@ export class EntrenadorasService {
           }));
           
         }),
-        shareReplay(1)
+        shareReplay(1)// caché para no hacer mil peticiones
+       //asi no se llama al api cada vez que se escribe algo
       );
     }
 }

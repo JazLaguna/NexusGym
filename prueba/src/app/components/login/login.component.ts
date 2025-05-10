@@ -137,7 +137,7 @@ export class LoginComponent {
     }
 
     // Validación: edad < 21 no puede elegir nivel avanzado
-    if (edadValor <= 20 && nivel?.avanzado) {
+    if (edadValor <= 21 && nivel?.avanzado) {
       Swal.fire({
         icon: 'warning',
         title: 'Nivel no permitido',
@@ -148,6 +148,8 @@ export class LoginComponent {
     }
 
     // Validación: no más de un nivel seleccionado
+    //Object.values comvierte los valores del objeto nivel en un array
+    //filter: filtrar los valores que son true
     const nivelesSeleccionados = Object.values(nivel || {}).filter(v => v === true);
     if (nivelesSeleccionados.length > 1) {
       Swal.fire({
@@ -190,6 +192,8 @@ export class LoginComponent {
     const nivelGroup = this.loginForm.get('nivel') as FormGroup;
 
     // Si después del cambio no hay ninguno seleccionado
+    //object.values convierte los valores del nivelGroup en un array
+    //.some verifica si al menos 1 elemento es true
     const algunoSeleccionado = Object.values(nivelGroup.value).some(val => val);
 
     // Fuerza validación y muestra error si se desmarcan todos
@@ -197,12 +201,15 @@ export class LoginComponent {
       nivelGroup.markAsTouched(); // Para que aparezca el mat-error de se requiere
     }
 
+    //Actualiza los cambios rapidamente
     nivelGroup.updateValueAndValidity();
   }
 
-
+  //retornar null si ya hay seleccionado, true si es invalido
   alMenosUnNivelSeleccionado(group: FormGroup): { [key: string]: boolean } | null {
-    const { basico, intermedio, avanzado } = group.value;
+    const { basico, intermedio, avanzado } = group.value; //extraer valores
     return basico || intermedio || avanzado ? null : { nivelRequerido: true };
+    //uno de los 3 son true, manda el null
+    //caso contrario manda llamar a nivel requerido para mostrar el mensaje
   }
 }
